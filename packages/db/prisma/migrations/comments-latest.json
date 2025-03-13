@@ -1,0 +1,103 @@
+{
+  "sites": {
+    "table": {
+      "tableName": "sites",
+      "comment": ""
+    },
+    "columns": [
+      {
+        "tableName": "sites",
+        "columnName": "id",
+        "comment": ""
+      },
+      {
+        "tableName": "sites",
+        "columnName": "uuid",
+        "comment": ""
+      },
+      {
+        "tableName": "sites",
+        "columnName": "name",
+        "comment": "サイト名"
+      },
+      {
+        "tableName": "sites",
+        "columnName": "description",
+        "comment": "サイトの説明"
+      },
+      {
+        "tableName": "sites",
+        "columnName": "domain",
+        "comment": "サイトのドメイン (ユニーク)"
+      },
+      {
+        "tableName": "sites",
+        "columnName": "apiKey",
+        "comment": "クライアント認証用APIキー"
+      },
+      {
+        "tableName": "sites",
+        "columnName": "sendgridApiKey",
+        "comment": "SendGrid APIキー"
+      },
+      {
+        "tableName": "sites",
+        "columnName": "webhookPublicKey",
+        "comment": "SendGrid webhook public key"
+      },
+      {
+        "tableName": "sites",
+        "columnName": "createdAt",
+        "comment": "レコードの作成日時"
+      },
+      {
+        "tableName": "sites",
+        "columnName": "updatedAt",
+        "comment": "レコードの更新日時"
+      }
+    ]
+  },
+  "customers": {
+    "table": {
+      "tableName": "customers",
+      "comment": ""
+    },
+    "columns": [
+      {
+        "tableName": "customers",
+        "columnName": "id",
+        "comment": "顧客の一意な識別子"
+      },
+      {
+        "tableName": "customers",
+        "columnName": "email",
+        "comment": "顧客のメールアドレス"
+      },
+      {
+        "tableName": "customers",
+        "columnName": "name",
+        "comment": "顧客の名前（オプション）"
+      },
+      {
+        "tableName": "customers",
+        "columnName": "siteId",
+        "comment": "顧客が所属するサイトのID"
+      },
+      {
+        "tableName": "customers",
+        "columnName": "active",
+        "comment": "顧客のアクティブ状態 (デフォルト: true)"
+      },
+      {
+        "tableName": "customers",
+        "columnName": "createdAt",
+        "comment": "レコードの作成日時"
+      },
+      {
+        "tableName": "customers",
+        "columnName": "updatedAt",
+        "comment": "レコードの更新日時"
+      }
+    ]
+  }
+}

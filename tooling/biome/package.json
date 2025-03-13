@@ -1,0 +1,18 @@
+{
+  "name": "@tooling/biome",
+  "files": [
+    "*.json",
+    "*.jsonc"
+  ],
+  "scripts": {
+    "format": "pnpm format:write && pnpm format:packages",
+    "format:check": "biome format",
+    "format:packages": "sort-package-json",
+    "format:write": "biome format --write"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "catalog:",
+    "@tsconfig/strictest": "catalog:",
+    "sort-package-json": "catalog:"
+  }
+}

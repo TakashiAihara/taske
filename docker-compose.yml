@@ -1,0 +1,118 @@
+services:
+  task-organizer-read:
+    build:
+      context: .
+      dockerfile: ./apps/core/task-organizer-read/Dockerfile
+      target: dev
+    ports:
+      - 3000:3000
+    volumes:
+      - .:/app:delegated
+
+      - node_modules_global:/app/node_modules:delegated
+      - node_modules_task_organizer_read:/app/apps/core/task-organizer-read/node_modules:delegated
+      - node_modules_env:/app/packages/env/node_modules:delegated
+      - node_modules_db:/app/packages/db/node_modules:delegated
+      - node_modules_schemas:/app/packages/shared/schemas/node_modules:delegated
+      - node_modules_types:/app/packages/shared/types/node_modules:delegated
+      - node_modules_tsconfig:/app/tooling/tsconfig/node_modules:delegated
+      - node_modules_biome:/app/tooling/biome/node_modules:delegated
+
+      - /app/packages/env/dist
+      - /app/packages/db/dist
+      - /app/packages/shared/schemas/dist
+      - /app/packages/shared/types/dist
+      - /app/tooling/tsconfig/dist
+      - /app/tooling/biome/dist
+
+      - ${HOME}/.pnpm-store:/app/.pnpm-store:delegated
+    environment:
+      - NODE_ENV=development
+
+  task-organizer-write:
+    build:
+      context: .
+      dockerfile: ./apps/core/task-organizer-write/Dockerfile
+      target: dev
+    ports:
+      - 3000:3000
+    volumes:
+      - .:/app:delegated
+
+      - node_modules_global:/app/node_modules:delegated
+      - node_modules_task_organizer_write:/app/apps/core/task-organizer-write/node_modules:delegated
+      - node_modules_env:/app/packages/env/node_modules:delegated
+      - node_modules_db:/app/packages/db/node_modules:delegated
+      - node_modules_schemas:/app/packages/shared/schemas/node_modules:delegated
+      - node_modules_types:/app/packages/shared/types/node_modules:delegated
+      - node_modules_tsconfig:/app/tooling/tsconfig/node_modules:delegated
+      - node_modules_biome:/app/tooling/biome/node_modules:delegated
+
+      - /app/packages/env/dist
+      - /app/packages/db/dist
+      - /app/packages/shared/schemas/dist
+      - /app/packages/shared/types/dist
+      - /app/tooling/tsconfig/dist
+      - /app/tooling/biome/dist
+
+      - ${HOME}/.pnpm-store:/app/.pnpm-store:delegated
+    environment:
+      - NODE_ENV=development
+
+  user-web:
+    build:
+      context: .
+      dockerfile: ./apps/user/web/Dockerfile
+      target: dev
+    ports:
+      - 3000:3000
+    volumes:
+      - .:/app:delegated
+
+      - node_modules_global:/app/node_modules:delegated
+      - node_modules_task_organizer_write:/app/apps/core/task-organizer-write/node_modules:delegated
+      - node_modules_env:/app/packages/env/node_modules:delegated
+      - node_modules_db:/app/packages/db/node_modules:delegated
+      - node_modules_schemas:/app/packages/shared/schemas/node_modules:delegated
+      - node_modules_types:/app/packages/shared/types/node_modules:delegated
+      - node_modules_tsconfig:/app/tooling/tsconfig/node_modules:delegated
+      - node_modules_biome:/app/tooling/biome/node_modules:delegated
+
+      - /app/packages/env/dist
+      - /app/packages/db/dist
+      - /app/packages/shared/schemas/dist
+      - /app/packages/shared/types/dist
+      - /app/tooling/tsconfig/dist
+      - /app/tooling/biome/dist
+
+      - ${HOME}/.pnpm-store:/app/.pnpm-store:delegated
+    environment:
+      - NODE_ENV=development
+
+
+  db:
+    image: postgres:latest
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: taske_local
+    ports:
+      - ${DB_PORT:-5432}:5432
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  node_modules_global:
+  node_modules_email_processor:
+  node_modules_schemas:
+  node_modules_types:
+  node_modules_env:
+  node_modules_db:
+  node_modules_tsconfig:
+  node_modules_biome:
+  pnpm_store:
+  postgres_data:
+    driver: local

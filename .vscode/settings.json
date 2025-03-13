@@ -1,0 +1,91 @@
+{
+    "biome.enabled": true,
+    "biome.projects": [
+        {
+            "path": "apps/core/task-organizer-read",
+            "configFile": "apps/core/task-organizer-read/biome.json"
+        },
+        {
+            "path": "apps/core/task-organizer-write",
+            "configFile": "apps/core/task-organizer-write/biome.json"
+        },
+        {
+            "path": "apps/user/web",
+            "configFile": "apps/user/web/biome.json"
+        },
+        {
+            "path": "packages/db",
+            "configFile": "packages/db/biome.json"
+        },
+        {
+            "path": "packages/env",
+            "configFile": "packages/env/biome.json"
+        },
+        {
+            "path": "packages/shared/schemas",
+            "configFile": "packages/shared/schemas/biome.json"
+        },
+        {
+            "path": "packages/shared/types",
+            "configFile": "packages/shared/types/biome.json"
+        },
+        {
+            "path": "tooling/biome",
+            "configFile": "tooling/biome/biome.json"
+        },
+        {
+            "path": "tooling/tsconfig",
+            "configFile": "tooling/tsconfig/biome.json"
+        }
+    ],
+    "cSpell.words": [
+        "SENDGRID",
+        "biomejs",
+        "nestjs",
+        "nextjs",
+        "outdir",
+        "protobuf",
+        "swcrc",
+        "tidb",
+        "trpc",
+        "tsbuildinfo",
+        "typecheck",
+        "unplugin"
+    ],
+    "[javascript]": {
+        "editor.defaultFormatter": "biomejs.biome"
+    },
+    "[javascriptreact]": {
+        "editor.defaultFormatter": "biomejs.biome"
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "biomejs.biome"
+    },
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "biomejs.biome"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "biomejs.biome"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "biomejs.biome"
+    },
+    "[css]": {
+        "editor.defaultFormatter": "biomejs.biome"
+    },
+    "[graphql]": {
+        "editor.defaultFormatter": "biomejs.biome"
+    },
+    "editor.codeActionsOnSave": {
+        "quickfix.biome": "explicit",
+        "source.fixAll.biome": "explicit",
+        "source.organizeImports": "explicit",
+        "source.removeUnusedImports": "explicit",
+        "source.sortImports": "explicit",
+        "source.removeUnused.ts": "explicit",
+        "source.fixAll.ts": "explicit",
+        "source.sortPackageJson": "explicit"
+    },
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true
+}

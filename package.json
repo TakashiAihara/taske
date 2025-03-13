@@ -1,15 +1,70 @@
 {
   "name": "taske",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "private": true,
+  "author": "TakashiAihara",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "analyze:check": "pnpm -r analyze:check",
+    "analyze:check:ci": "pnpm -r analyze:check:ci",
+    "analyze:check:unsafe": "pnpm -r analyze:check:unsafe",
+    "analyze:write": "pnpm -r analyze:write",
+    "build": "pnpm --filter '@packages/shared-*' build && pnpm --filter '@packages/env' build && pnpm --filter '@packages/db' build && pnpm --filter '@core/*' build && pnpm --filter '@user/*' build",
+    "db:base": "pnpm --filter '@packages/db'",
+    "db:format": "pnpm db:base db:format",
+    "db:generate": "pnpm db:base db:generate",
+    "db:migrate": "pnpm db:base db:migrate",
+    "db:migrate:deploy": "pnpm db:base db:migrate:deploy",
+    "db:migrate:status": "pnpm db:base db:migrate:status",
+    "db:pull": "pnpm db:base db:pull",
+    "db:push": "pnpm db:base db:push",
+    "db:rollback": "pnpm db:base db:rollback",
+    "db:seed": "pnpm db:base db:seed",
+    "db:studio": "pnpm db:base db:studio",
+    "format": "pnpm -r format",
+    "format:check": "pnpm -r format:check",
+    "format:packages": "sort-package-json && pnpm -r format:packages",
+    "format:write": "pnpm -r format:write",
+    "lint:check": "pnpm -r lint:check",
+    "lint:write": "pnpm -r lint:write",
+    "start": "pnpm -r start",
+    "start:debug": "pnpm -r start:debug",
+    "start:dev": "pnpm -r start:dev",
+    "start:prod": "pnpm -r start:prod",
+    "test": "pnpm -r test",
+    "test:all": "pnpm -r test:all",
+    "test:benchmark": "pnpm -r test:benchmark",
+    "test:cov": "pnpm -r test:cov",
+    "test:integration": "pnpm -r test:integration",
+    "test:snapshot:update": "pnpm -r test:snapshot:update",
+    "test:unit": "pnpm -r test:unit",
+    "test:watch": "pnpm -r test:watch",
+    "type:check": "pnpm -r type:check"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
-    "@anthropic-ai/claude-code": "^0.2.35"
+    "@tooling/biome": "workspace:^",
+    "@tsconfig/strictest": "catalog:",
+    "sort-package-json": "catalog:",
+    "turbo": "^2.4.4"
+  },
+  "packageManager": "pnpm@10.6.2",
+  "engines": {
+    "node": ">=22.14.0",
+    "npm": "DO NOT USE NPM",
+    "pnpm": "10.6.2",
+    "yarn": "DO NOT USE YARN"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "@biomejs/biome",
+      "@nestjs/core",
+      "@prisma/client",
+      "@prisma/engines",
+      "@swc/core",
+      "esbuild",
+      "prisma"
+    ],
+    "ignoredBuiltDependencies": [
+      "@nestjs/core"
+    ]
   }
 }

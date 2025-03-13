@@ -1,0 +1,9 @@
+{
+  "recommendations": [
+    "streetsidesoftware.code-spell-checker",
+    "unional.vscode-sort-package-json",
+    "redhat.vscode-yaml",
+    "biomejs.biome",
+    "bocovo.dbml-erd-visualizer"
+  ]
+}
