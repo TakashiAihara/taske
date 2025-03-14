@@ -36,11 +36,11 @@
     "tsc-alias": "catalog:",
     "typescript": "catalog:"
   },
-  "packageManager": "pnpm@10.6.2",
+  "packageManager": "pnpm@10.6.3",
   "engines": {
     "node": ">=22.14.0",
     "npm": "DO NOT USE NPM",
-    "pnpm": "10.6.2",
+    "pnpm": "10.6.3",
     "yarn": "DO NOT USE YARN"
   }
 }

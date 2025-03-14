@@ -66,6 +66,7 @@ lib-cov
 logs
 next-env.d.ts
 node_modules/
+node-compile-cache
 npm-debug.log*
 out
 pids
