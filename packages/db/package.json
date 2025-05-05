@@ -60,28 +60,28 @@
     "type:check": "tsc --noEmit"
   },
   "dependencies": {
-    "@nestjs/common": "^11.0.11",
+    "@nestjs/common": "^11.1.0",
     "@packages/env": "workspace:",
     "@packages/shared-schemas": "workspace:",
     "@packages/shared-types": "workspace:",
-    "@prisma/client": "^6.5.0"
+    "@prisma/client": "^6.7.0"
   },
   "devDependencies": {
     "@biomejs/biome": "catalog:",
-    "@onozaty/prisma-db-comments-generator": "^1.0.3",
+    "@onozaty/prisma-db-comments-generator": "^1.1.0",
     "@tooling/biome": "workspace:",
     "@tooling/tsconfig": "workspace:",
     "@tsconfig/strictest": "catalog:",
     "@types/node": "catalog:",
     "fix-esm-import-path": "catalog:",
-    "prisma": "^6.5.0",
+    "prisma": "^6.7.0",
     "prisma-dbml-generator": "^0.12.0",
     "rimraf": "catalog:",
     "sort-package-json": "catalog:",
     "tsc-alias": "catalog:",
     "tsup": "catalog:",
     "typescript": "catalog:",
-    "zod": "^3.24.2",
+    "zod": "^3.24.4",
     "zod-prisma-types": "^3.2.4"
   }
 }

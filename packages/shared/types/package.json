@@ -29,11 +29,11 @@
     "tsc-alias": "catalog:",
     "typescript": "catalog:"
   },
-  "packageManager": "pnpm@10.6.3",
+  "packageManager": "pnpm@10.10.0",
   "engines": {
     "node": ">=22.14.0",
     "npm": "DO NOT USE NPM",
-    "pnpm": "10.6.3",
+    "pnpm": "10.10.0",
     "yarn": "DO NOT USE YARN"
   }
 }
