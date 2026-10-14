@@ -102,6 +102,55 @@ Currently implements a simple Task entity with:
 - `name`: Task name (indexed)
 - `createdAt`/`updatedAt`: Timestamps
 
+## MCP Servers
+
+This project is configured with multiple Model Context Protocol (MCP) servers to enhance AI assistance capabilities. Always prefer using MCP servers when available for tasks instead of manual operations.
+
+### Available MCP Servers
+
+Core Utilities:
+
+- fetch - Web content retrieval and markdown extraction
+- filesystem - Local file operations (mounted to project workspace)
+- time - Time and timezone operations
+- playwright - Browser automation and web scraping
+
+Development & Code:
+
+- desktop-commander - File management and terminal command execution
+- sequential-thinking - Dynamic problem-solving through thought sequences
+- github - GitHub API integration (via Copilot)
+- deepwiki - Documentation and knowledge base access
+
+Cloud & Infrastructure:
+
+- aws-core-mcp-server - AWS core services
+- aws-documentation - AWS documentation access
+- aws-diagram - AWS architecture diagram creation
+- aws-terraform - Terraform on AWS best practices
+- redis - Redis database operations
+- grafana - Monitoring and observability
+
+Productivity & Communication:
+
+- notion - Notion workspace integration
+- obsidian - Obsidian knowledge management
+- line - LINE messaging platform integration
+- docker - Docker operations and container management
+
+### MCP Usage Guidelines
+
+1. Prefer MCP over manual operations - Always check if an MCP server can handle the task
+2. Filesystem operations - Use `filesystem` MCP for file operations within the project
+3. Web content - Use `fetch` MCP for retrieving web content
+4. AWS operations - Use AWS MCP servers for cloud infrastructure tasks
+5. Documentation - Use `deepwiki` for accessing comprehensive documentation
+6. Browser automation - Use `playwright` MCP for web scraping and testing
+
+### Configuration
+
+MCP servers are configured in `.mcp.json` and run via Docker containers. Most servers use standard Docker flags (`-i`, `--rm`) with the filesystem server having workspace volume mounting for local file access.
+
 ## Development Notes
 
 - Use Node.js ≥22.14.0
